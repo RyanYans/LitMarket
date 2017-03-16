@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ryanyans32 on 2017/3/14.
@@ -32,7 +33,7 @@ abstract public class BaseHolder<T> {
     }
 
 
-    public T getData(ArrayList<T> data) {
+    public T getData() {
         return this.data;
     }
 

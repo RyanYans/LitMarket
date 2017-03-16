@@ -7,6 +7,8 @@ import android.widget.TextView;
 import com.rya.litmarket.R;
 import com.rya.litmarket.utils.UiUtil;
 
+import java.util.List;
+
 /**
  * Created by ryanyans32 on 2017/3/14.
  * <p>
@@ -21,6 +23,9 @@ public class MoreHolder extends BaseHolder<Integer> {
     private LinearLayout loadMoreNormal;
     private TextView loadMoreError;
 
+    public MoreHolder(boolean hasMore) {
+        setData(hasMore ? STATE_MORE : STATE_NONE);
+    }
 
     @Override
     protected View initView() {
