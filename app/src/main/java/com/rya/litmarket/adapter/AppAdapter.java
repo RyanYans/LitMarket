@@ -3,12 +3,9 @@ package com.rya.litmarket.adapter;
 import android.os.SystemClock;
 
 import com.rya.litmarket.bean.AppBean;
-import com.rya.litmarket.bean.HomeBean;
-import com.rya.litmarket.holder.AppHolder;
 import com.rya.litmarket.http.protocol.AppProtocol;
-import com.rya.litmarket.http.protocol.HomeProtocol;
+import com.rya.litmarket.ui.holder.AppHolder;
 import com.rya.litmarket.ui.holder.BaseHolder;
-import com.rya.litmarket.ui.holder.HomeHolder;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -33,7 +33,7 @@ public class FragmentFactory {
                     fragment = new GameFragment();
                     break;
                 case FOCUS_FRAGMENT:
-                    fragment = new FocusFragment();
+                    fragment = new SubjectFragment();
                     break;
                 case RECOMM_FRAGMENT:
                     fragment = new RecommFragment();

@@ -1,4 +1,4 @@
-package com.rya.litmarket.holder;
+package com.rya.litmarket.ui.holder;
 
 import android.text.format.Formatter;
 import android.view.View;
@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide;
 import com.rya.litmarket.R;
 import com.rya.litmarket.bean.AppBean;
 import com.rya.litmarket.http.HttpUtil;
-import com.rya.litmarket.ui.holder.BaseHolder;
 import com.rya.litmarket.utils.UiUtil;
 
 import butterknife.BindView;

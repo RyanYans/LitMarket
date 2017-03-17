@@ -4,9 +4,10 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.rya.litmarket.adapter.AppAdapter;
+import com.rya.litmarket.adapter.SubjectAdapter;
 import com.rya.litmarket.bean.AppBean;
-import com.rya.litmarket.http.protocol.AppProtocol;
+import com.rya.litmarket.bean.SubjectBean;
+import com.rya.litmarket.http.protocol.SubjectProtocol;
 import com.rya.litmarket.ui.view.LoadingPager;
 import com.rya.litmarket.utils.UiUtil;
 
@@ -17,27 +18,25 @@ import java.util.ArrayList;
  * Version 1.0
  */
 
-public class AppFragment extends BaseFragment {
+public class SubjectFragment extends BaseFragment {
 
-    private ArrayList<AppBean> mAppBeanArrayList;
+    private ArrayList<SubjectBean> subjectBeanArrayList;
 
     @Override
     protected View onCreateSuccessView() {
         ListView listView = new ListView(UiUtil.getContext());
-        listView.setAdapter(new AppAdapter(mAppBeanArrayList));
+        listView.setAdapter(new SubjectAdapter(subjectBeanArrayList));
 
         return listView;
-
     }
 
     @Override
     protected LoadingPager.ResultState onLoad() {
+        SubjectProtocol subjectProtocol = new SubjectProtocol();
+        subjectBeanArrayList = subjectProtocol.getData(0);
 
-        AppProtocol appProtocol = new AppProtocol();
-        mAppBeanArrayList = appProtocol.getData(0);
-
-        if (mAppBeanArrayList != null) {
-            return mAppBeanArrayList.size() > 0 ? LoadingPager.ResultState.SUCESS
+        if (subjectBeanArrayList != null) {
+            return subjectBeanArrayList.size() > 0 ? LoadingPager.ResultState.SUCESS
                     : LoadingPager.ResultState.EMPTY;
         }
         return LoadingPager.ResultState.ERROR;
