@@ -1,4 +1,4 @@
-package com.rya.litmarket.view;
+package com.rya.litmarket.ui.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

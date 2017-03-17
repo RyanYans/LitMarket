@@ -46,7 +46,7 @@
         android:layout_gravity="start"
         app:theme="@style/MenuTextStyle"
         app:menu="@menu/nav_menu"
-        app:headerLayout="@layout/nav_header"
+        app:headerLayout="@layout/layout_nav_header"
         >
 
     </android.support.design.widget.NavigationView>

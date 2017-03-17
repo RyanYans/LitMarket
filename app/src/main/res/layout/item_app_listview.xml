@@ -70,21 +70,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 >
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_download"
-                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="下载"
+                    android:text="安装"
                     android:textSize="14dp"
                     android:textColor="@color/colorTextGray"
                     />

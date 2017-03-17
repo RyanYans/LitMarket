@@ -1,4 +1,4 @@
-package com.rya.litmarket.fragment;
+package com.rya.litmarket.ui.fragment;
 
 import android.graphics.Color;
 import android.view.Gravity;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.rya.litmarket.utils.UiUtil;
-import com.rya.litmarket.view.LoadingPager;
+import com.rya.litmarket.ui.view.LoadingPager;
 
 /**
  * Created by Rya32 on 广东石油化工学院.

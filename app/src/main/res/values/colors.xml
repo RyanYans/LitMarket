@@ -3,6 +3,9 @@
     <color name="colorPrimary">#2299bb</color>
     <color name="colorPrimaryDark">#2299bb</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorTitle">#222233</color>
+    <color name="colorDes">#666666</color>
+    <color name="colorTextGray">#666666</color>
     <color name="colorGlobal">#2299bb</color>
     <color name="colorBlack">#223333</color>
 </resources>

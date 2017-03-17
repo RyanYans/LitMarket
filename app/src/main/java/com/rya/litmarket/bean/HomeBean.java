@@ -45,7 +45,7 @@ public class HomeBean {
         private String name;
         private String packageName;
         private String iconUrl;
-        private double stars;
+        private float stars;
         private int size;
         private String downloadUrl;
         private String des;
@@ -82,11 +82,11 @@ public class HomeBean {
             this.iconUrl = iconUrl;
         }
 
-        public double getStars() {
+        public float getStars() {
             return stars;
         }
 
-        public void setStars(double stars) {
+        public void setStars(float stars) {
             this.stars = stars;
         }
 

@@ -1,10 +1,6 @@
-package com.rya.litmarket.holder;
+package com.rya.litmarket.ui.holder;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ryanyans32 on 2017/3/14.

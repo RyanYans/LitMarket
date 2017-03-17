@@ -5,13 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.rya.litmarket.bean.HomeBean;
-import com.rya.litmarket.holder.BaseHolder;
-import com.rya.litmarket.holder.HomeHolder;
-import com.rya.litmarket.holder.MoreHolder;
+import com.rya.litmarket.ui.holder.BaseHolder;
+import com.rya.litmarket.ui.holder.HomeHolder;
+import com.rya.litmarket.ui.holder.MoreHolder;
 import com.rya.litmarket.utils.UiUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -70,7 +68,7 @@ public abstract class ListBaseAdapter<T> extends BaseAdapter {
             if (getItemViewType(i) == TYPE_MORE) {
                 holder = new MoreHolder(hasMore());
             } else if (getItemViewType(i) == TYPE_NOMAL){
-                holder = new HomeHolder();
+                holder = getHolder();
             }
         } else {
             holder = (BaseHolder) convertView.getTag();
@@ -87,6 +85,8 @@ public abstract class ListBaseAdapter<T> extends BaseAdapter {
         }
         return holder.getRootView();
     }
+
+    protected abstract BaseHolder getHolder();
 
     private boolean hasMore() {
         return true;
@@ -106,13 +106,21 @@ public abstract class ListBaseAdapter<T> extends BaseAdapter {
                     if (moreData != null) {
                         data.addAll(moreData);
 
-                        moreHolder.setData(MoreHolder.STATE_MORE);
-
                         UiUtil.runOnUIThread(new Runnable() {
                             @Override
                             public void run() {
+                                // 更新当前状态
+                                moreHolder.setData(MoreHolder.STATE_MORE);
+
                                 // 更新listView数据
                                 ListBaseAdapter.this.notifyDataSetChanged();
+                            }
+                        });
+                    } else {
+                        UiUtil.runOnUIThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                moreHolder.setData(MoreHolder.STATE_ERROR);
                             }
                         });
                     }

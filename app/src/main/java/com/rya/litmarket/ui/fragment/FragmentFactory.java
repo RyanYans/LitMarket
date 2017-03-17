@@ -1,4 +1,4 @@
-package com.rya.litmarket.fragment;
+package com.rya.litmarket.ui.fragment;
 
 import java.util.HashMap;
 

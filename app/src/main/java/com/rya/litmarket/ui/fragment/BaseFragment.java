@@ -1,4 +1,4 @@
-package com.rya.litmarket.fragment;
+package com.rya.litmarket.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rya.litmarket.utils.UiUtil;
-import com.rya.litmarket.view.LoadingPager;
+import com.rya.litmarket.ui.view.LoadingPager;
 
 /**
  * Created by ryanyans32 on 2017/3/11.

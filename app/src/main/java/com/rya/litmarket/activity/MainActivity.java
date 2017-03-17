@@ -15,7 +15,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.rya.litmarket.R;
-import com.rya.litmarket.fragment.MainContentFragment;
+import com.rya.litmarket.ui.fragment.MainContentFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

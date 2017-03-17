@@ -35,7 +35,6 @@ public abstract class BaseProtocol<T> {
                 data = parseData(fromServerData);
             }
         }
-
         return data;
     }
 
@@ -93,15 +92,12 @@ public abstract class BaseProtocol<T> {
                 + index + getParams()).build();
 
         Response response = null;
-        try {
-            response = okHttpClient.newCall(request).execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         String data = null;
         try {
-            data = response.body().string();
+            response = okHttpClient.newCall(request).execute();
+            if (response != null) {
+                data = response.body().string();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

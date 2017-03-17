@@ -1,4 +1,4 @@
-package com.rya.litmarket.holder;
+package com.rya.litmarket.ui.holder;
 
 import android.view.View;
 import android.widget.LinearLayout;
@@ -6,8 +6,6 @@ import android.widget.TextView;
 
 import com.rya.litmarket.R;
 import com.rya.litmarket.utils.UiUtil;
-
-import java.util.List;
 
 /**
  * Created by ryanyans32 on 2017/3/14.

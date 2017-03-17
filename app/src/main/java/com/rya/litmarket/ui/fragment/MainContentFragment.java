@@ -1,4 +1,4 @@
-package com.rya.litmarket.fragment;
+package com.rya.litmarket.ui.fragment;
 
 import android.app.Fragment;
 import android.graphics.Color;
@@ -120,7 +120,7 @@ public class MainContentFragment extends Fragment {
                 return null;
             }
             if (convertView == null) {
-                convertView = getActivity().getLayoutInflater().inflate(R.layout.tab_top, container, false);
+                convertView = getActivity().getLayoutInflater().inflate(R.layout.item_tab_top, container, false);
             }
             TextView textView = (TextView) convertView;
 
