@@ -1,6 +1,7 @@
 package com.rya.litmarket.ui.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.rya.litmarket.utils.UiUtil;
 import com.rya.litmarket.ui.view.LoadingPager;
+
+import java.util.List;
 
 /**
  * Created by ryanyans32 on 2017/3/11.
@@ -54,6 +57,15 @@ public abstract class BaseFragment extends Fragment {
     * */
     public void loadData() {
         mLoadingPager.loadData();
+    }
+
+    @NonNull
+    public LoadingPager.ResultState getResultState(List list) {
+        if (list != null) {
+            return list.size() > 0 ? LoadingPager.ResultState.SUCESS
+                    : LoadingPager.ResultState.EMPTY;
+        }
+        return LoadingPager.ResultState.ERROR;
     }
 
     /*

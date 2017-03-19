@@ -42,7 +42,6 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="5dp"
-            android:text="CE SHI SHU JU塑料袋放进开水啦大家赶快练级的国际大厦是低级高级卡时间分厘卡时间啊罗卡格洛克；嘎！"
             android:textColor="@color/colorTitle"
             android:textSize="18sp"
             />

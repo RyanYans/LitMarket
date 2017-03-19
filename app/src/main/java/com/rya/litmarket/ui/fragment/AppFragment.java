@@ -36,10 +36,6 @@ public class AppFragment extends BaseFragment {
         AppProtocol appProtocol = new AppProtocol();
         mAppBeanArrayList = appProtocol.getData(0);
 
-        if (mAppBeanArrayList != null) {
-            return mAppBeanArrayList.size() > 0 ? LoadingPager.ResultState.SUCESS
-                    : LoadingPager.ResultState.EMPTY;
-        }
-        return LoadingPager.ResultState.ERROR;
+        return getResultState(mAppBeanArrayList);
     }
 }

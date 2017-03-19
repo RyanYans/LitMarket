@@ -1,12 +1,15 @@
 package com.rya.litmarket.utils;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Process;
 import android.view.View;
 
 import com.rya.litmarket.global.GlobalApplication;
+
+import java.util.Random;
 
 /**
  * Created by Rya32 on 广东石油化工学院.
@@ -85,4 +88,17 @@ public class UiUtil {
     }
 
 
+    public static int getRandomColor() {
+        Random random = new Random();
+        int randomRed = 30 + random.nextInt(200);
+        int randomgreen = 30 + random.nextInt(200);
+        int randomblue = 30 + random.nextInt(200);
+
+        return Color.rgb(randomRed, randomgreen, randomblue);
+    }
+
+    public static float getRandomSize() {
+        Random random = new Random();
+        return (float) (12 + random.nextInt(16));
+    }
 }

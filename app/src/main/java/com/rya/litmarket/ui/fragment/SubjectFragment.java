@@ -1,5 +1,6 @@
 package com.rya.litmarket.ui.fragment;
 
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import com.rya.litmarket.ui.view.LoadingPager;
 import com.rya.litmarket.utils.UiUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Rya32 on 广东石油化工学院.
@@ -35,10 +37,7 @@ public class SubjectFragment extends BaseFragment {
         SubjectProtocol subjectProtocol = new SubjectProtocol();
         subjectBeanArrayList = subjectProtocol.getData(0);
 
-        if (subjectBeanArrayList != null) {
-            return subjectBeanArrayList.size() > 0 ? LoadingPager.ResultState.SUCESS
-                    : LoadingPager.ResultState.EMPTY;
-        }
-        return LoadingPager.ResultState.ERROR;
+        return getResultState(subjectBeanArrayList);
     }
+
 }

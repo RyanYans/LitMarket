@@ -38,13 +38,7 @@ public class HomeFragment extends BaseFragment {
         HomeProtocol homeProtocol = new HomeProtocol();
         homeBean = homeProtocol.getData(0);
 
-        if (homeBean != null) {
-            return homeBean.getList().size() > 0 ? LoadingPager.ResultState.SUCESS
-                    : LoadingPager.ResultState.EMPTY;
-        } else {
-            return LoadingPager.ResultState.ERROR;
-        }
-
+        return getResultState(homeBean.getList());
     }
 
 }
