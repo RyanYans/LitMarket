@@ -53,8 +53,8 @@ public class UiUtil {
         return GlobalApplication.getContext().getResources().getDrawable(id);
     }
 
-    public static float getDimen(int id) {
-        return GlobalApplication.getContext().getResources().getDimension(id);
+    public static int getDimen(int id) {
+        return (int) GlobalApplication.getContext().getResources().getDimension(id);
 
     }
 

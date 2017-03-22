@@ -47,7 +47,7 @@ public class HomeHolder extends BaseHolder<HomeBean.ListBean> {
         ButterKnife.bind(this, view);
         return view;
     }
-
+   
     @Override
     protected void refreshView(HomeBean.ListBean data) {
         // 获取icon图片在服务器的全路径

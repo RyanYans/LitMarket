@@ -84,10 +84,8 @@ public abstract class LoadingPager extends FrameLayout {
                     }
                 }
             }).start();
-
         }
     }
-
 
     /*
     * 根据当前STATE设置共性页面的隐藏或显示
@@ -118,7 +116,7 @@ public abstract class LoadingPager extends FrameLayout {
     }
 
     /*
-    * 枚举，用于返回数据结果
+    * 枚举，用于返回数据结果（currentState）
     * */
     public enum ResultState {
         SUCESS(SUCCESS_STATE), EMPTY(EMPTY_STATE), ERROR(ERROR_STATE);

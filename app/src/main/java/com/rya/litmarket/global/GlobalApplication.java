@@ -6,6 +6,8 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Process;
 
+import com.squareup.leakcanary.LeakCanary;
+
 /**
  * Created by Rya32 on 广东石油化工学院.
  * Version 1.0
@@ -30,6 +32,14 @@ public class GlobalApplication extends Application {
         handler = new Handler();
         mainThreadId = Process.myTid();
         sdkVersion = Build.VERSION.SDK_INT;
+
+        // 初始化内存检测
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
     }
 
     public static Context getContext() {

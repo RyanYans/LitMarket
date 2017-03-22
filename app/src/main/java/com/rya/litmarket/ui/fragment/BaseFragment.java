@@ -59,6 +59,11 @@ public abstract class BaseFragment extends Fragment {
         mLoadingPager.loadData();
     }
 
+    /**
+     * 检查服务器返回数据是否为空
+     * @param list  服务器返回数据
+     * @return  返回给LoadingPager层 数据接收信息
+     */
     @NonNull
     public LoadingPager.ResultState getResultState(List list) {
         if (list != null) {

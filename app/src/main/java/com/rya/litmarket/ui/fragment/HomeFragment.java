@@ -1,19 +1,14 @@
 package com.rya.litmarket.ui.fragment;
 
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.ListView;
 
 import com.rya.litmarket.adapter.HomeAdapter;
-import com.rya.litmarket.adapter.ListBaseAdapter;
 import com.rya.litmarket.bean.HomeBean;
 import com.rya.litmarket.http.protocol.HomeProtocol;
-import com.rya.litmarket.ui.holder.BaseHolder;
-import com.rya.litmarket.ui.holder.HomeHolder;
+import com.rya.litmarket.ui.holder.HomeHeaderHolder;
 import com.rya.litmarket.utils.UiUtil;
 import com.rya.litmarket.ui.view.LoadingPager;
-
-import java.util.List;
 
 /**
  * Created by Rya32 on 广东石油化工学院.
@@ -22,13 +17,19 @@ import java.util.List;
 
 public class HomeFragment extends BaseFragment {
 
-    private HomeBean homeBean;
+    private HomeBean mHomeBean;
 
     @Override
     protected View onCreateSuccessView() {
 
         ListView listView = new ListView(UiUtil.getContext());
-        listView.setAdapter(new HomeAdapter(homeBean.getList()));
+
+        //添加头部轮播图
+        HomeHeaderHolder homeHeaderHolder = new HomeHeaderHolder();
+        homeHeaderHolder.setData(mHomeBean.getPicture());
+        listView.addHeaderView(homeHeaderHolder.getRootView());
+
+        listView.setAdapter(new HomeAdapter(mHomeBean.getList()));
 
         return listView;
     }
@@ -36,9 +37,12 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected LoadingPager.ResultState onLoad() {
         HomeProtocol homeProtocol = new HomeProtocol();
-        homeBean = homeProtocol.getData(0);
+        mHomeBean = homeProtocol.getData(0);
 
-        return getResultState(homeBean.getList());
+        if (mHomeBean != null) {
+            return getResultState(mHomeBean.getList());
+        }
+        return LoadingPager.ResultState.ERROR;
     }
 
 }

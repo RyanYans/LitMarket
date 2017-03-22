@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rya.litmarket.R;
 import com.rya.litmarket.http.protocol.RankingProtocol;
@@ -50,14 +51,21 @@ public class RankingFragment extends BaseFragment {
 
             textView.setPadding(padding, padding, padding, padding);
 
-            int pressColor = 0x999999;
+            int pressColor = 0xff999999;
             Drawable nomalDrawable = DrawableUtil.getGradientDrawable(UiUtil.getRandomColor(), UiUtil.dip2px(6));
             Drawable pressDrawable = DrawableUtil.getGradientDrawable(pressColor, UiUtil.dip2px(6));
 
             StateListDrawable selector = DrawableUtil.getSelector(nomalDrawable, pressDrawable);
-
-
             textView.setBackground(selector);
+
+            final int finalI = i;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(UiUtil.getContext(), mRankingProtocolData.get(finalI), Toast.LENGTH_SHORT).show();
+
+                }
+            });
 
             flowLayout.addView(textView);
         }
