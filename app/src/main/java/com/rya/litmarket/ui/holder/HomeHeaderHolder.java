@@ -1,5 +1,6 @@
 package com.rya.litmarket.ui.holder;
 
+import android.sax.RootElement;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -62,6 +64,7 @@ public class HomeHeaderHolder extends BaseHolder<List<String>> {
         RelativeLayout.LayoutParams iParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
+
         // 设置当前线性布局相对于父控件的位置
         iParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         iParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
@@ -80,6 +83,7 @@ public class HomeHeaderHolder extends BaseHolder<List<String>> {
                 // 将当前圆点设置为选中样式
                 ImageView view = (ImageView) mIndicator.getChildAt(pos);
                 view.setImageResource(R.drawable.indicator_selected);
+
 
                 if (pos != mPreviousPos) {
                     // 将上一个圆点设置为默认样式
@@ -138,7 +142,7 @@ public class HomeHeaderHolder extends BaseHolder<List<String>> {
 
         public void start() {
             // 移除之前遗留的任务(handler只有一个,但HomeFragment有可能多次被创建,
-            // 从而导致消息被重复发送,所以需要先把之前的消息移除掉)
+            // 从而导致消息被重复发送,所以需要先把之前的消息移除掉)避免页面来回切换导致消息多次Post
             UiUtil.getHandler().removeCallbacksAndMessages(null);
             // 发送延时2秒的任务
             UiUtil.getHandler().postDelayed(this, 2000);

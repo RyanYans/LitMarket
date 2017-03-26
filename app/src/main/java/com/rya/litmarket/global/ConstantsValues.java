@@ -1,5 +1,7 @@
 package com.rya.litmarket.global;
 
+import com.rya.litmarket.http.HttpUtil;
+
 /**
  * Created by ryanyans32 on 2017/3/11.
  * <p>
@@ -8,4 +10,6 @@ package com.rya.litmarket.global;
  */
 
 public class ConstantsValues {
+
+    public static final String BASE_URL = HttpUtil.URL + "image?name=";
 }

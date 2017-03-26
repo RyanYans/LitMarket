@@ -1,7 +1,10 @@
 package com.rya.litmarket.http.protocol;
 
+import android.widget.Toast;
+
 import com.rya.litmarket.http.HttpUtil;
 import com.rya.litmarket.utils.IOUtils;
+import com.rya.litmarket.utils.LogUtils;
 import com.rya.litmarket.utils.UiUtil;
 
 import java.io.File;
@@ -33,6 +36,8 @@ public abstract class BaseProtocol<T> {
             if (fromServerData != null) {
                 setDataToCache(fromServerData, index);
                 data = parseData(fromServerData);
+            } else {
+                LogUtils.w("服务器返回数据为空！");
             }
         }
         return data;

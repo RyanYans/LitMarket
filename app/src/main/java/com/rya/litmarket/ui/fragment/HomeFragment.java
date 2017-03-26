@@ -1,8 +1,11 @@
 package com.rya.litmarket.ui.fragment;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.rya.litmarket.activity.HomeAppDetailActivity;
 import com.rya.litmarket.adapter.HomeAdapter;
 import com.rya.litmarket.bean.HomeBean;
 import com.rya.litmarket.http.protocol.HomeProtocol;
@@ -31,6 +34,8 @@ public class HomeFragment extends BaseFragment {
 
         listView.setAdapter(new HomeAdapter(mHomeBean.getList()));
 
+        listView.setOnItemClickListener(new InnerItemClickListener());
+
         return listView;
     }
 
@@ -45,4 +50,17 @@ public class HomeFragment extends BaseFragment {
         return LoadingPager.ResultState.ERROR;
     }
 
+    private class InnerItemClickListener implements android.widget.AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            if (mHomeBean != null) {
+                String packageName = mHomeBean.getList().get(i-1).getPackageName();
+
+                Intent intent = new Intent(UiUtil.getContext(), HomeAppDetailActivity.class);
+                intent.putExtra(HomeAppDetailActivity.PACKAGE_NAME, packageName);
+
+                startActivity(intent);
+            }
+        }
+    }
 }
