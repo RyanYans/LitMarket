@@ -46,8 +46,6 @@ public class HomeAppDetailActivity extends BaseActivity {
         };
         setContentView(basePager);
         basePager.loadData();
-
-
     }
 
     private LoadingPager.ResultState onLoad() {
@@ -90,6 +88,4 @@ public class HomeAppDetailActivity extends BaseActivity {
 
         return mRootView;
     }
-
-
 }
