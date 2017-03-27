@@ -23,4 +23,7 @@ public class TestUtil {
         Log.i(TAG, "ListBaseAdapter: " + strings.size());
         return strings;
     }
+
+    public void test() {
+    }
 }

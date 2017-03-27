@@ -36,6 +36,7 @@ public class AppDetailDesHolder extends BaseHolder<AppDetailBean> implements Vie
     ImageView ivArrow;
     @BindView(R.id.rl_des_detail_toggle)
     RelativeLayout rlDesDetailToggle;
+
     private ViewGroup.LayoutParams mParams;
 
     @Override
