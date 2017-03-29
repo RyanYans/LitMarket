@@ -87,9 +87,6 @@ public abstract class BaseProtocol<T> {
         }
     }
 
-    // 由子类解析json数据
-    protected abstract T parseData(String data);
-
     private String getDataFromServer(int index) {
         OkHttpClient okHttpClient = new OkHttpClient();
 
@@ -109,6 +106,9 @@ public abstract class BaseProtocol<T> {
 
         return data;
     }
+
+    // 由子类解析json数据
+    protected abstract T parseData(String data);
 
     abstract public String getKey();
 

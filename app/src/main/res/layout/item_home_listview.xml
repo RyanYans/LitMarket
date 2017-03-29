@@ -75,12 +75,13 @@
                 android:layout_alignParentRight="true"
                 >
 
-                <ImageView
+                <FrameLayout
+                    android:id="@+id/fl_home_app_download"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_download"
                     />
                 <TextView
+                    android:id="@+id/tv_Home_app_download"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"

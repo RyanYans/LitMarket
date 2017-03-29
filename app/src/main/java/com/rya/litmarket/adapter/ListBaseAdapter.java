@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.rya.litmarket.manager.ThreadManager;
 import com.rya.litmarket.ui.holder.BaseHolder;
 import com.rya.litmarket.ui.holder.HomeHolder;
 import com.rya.litmarket.ui.holder.MoreHolder;
@@ -98,7 +99,8 @@ public abstract class ListBaseAdapter<T> extends BaseAdapter {
         if (!isLoadMore) {
             isLoadMore = true;
 
-            new Thread(new Runnable() {
+            // 线程池加载更多
+            ThreadManager.getThreadPool().execute(new Runnable() {
                 @Override
                 public void run() {
                     // 获取数据，添加到集合。
@@ -125,7 +127,7 @@ public abstract class ListBaseAdapter<T> extends BaseAdapter {
                         });
                     }
                 }
-            }).start();
+            });
 
             isLoadMore = false;
         }

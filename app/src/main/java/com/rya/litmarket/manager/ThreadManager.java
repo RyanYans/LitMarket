@@ -27,7 +27,7 @@ public class ThreadManager {
     }
 
 
-    static class ThreadPool {
+    public static class ThreadPool {
         private ThreadPoolExecutor executor;
         private int corePoolSize = 5;
         private int maximumPoolSize = 10;
@@ -46,6 +46,11 @@ public class ThreadManager {
 
             executor.execute(runnable);
 
+        }
+
+        public void cancelTask(Runnable task) {
+            // 获取线程队列，移除任务
+            executor.getQueue().remove(task);
         }
     }
 }

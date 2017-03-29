@@ -33,6 +33,7 @@ public class GlobalApplication extends Application {
         mainThreadId = Process.myTid();
         sdkVersion = Build.VERSION.SDK_INT;
 
+/*
         // 初始化内存检测
         if (LeakCanary.isInAnalyzerProcess(this)) {
             // This process is dedicated to LeakCanary for heap analysis.
@@ -40,6 +41,7 @@ public class GlobalApplication extends Application {
             return;
         }
         LeakCanary.install(this);
+*/
     }
 
     public static Context getContext() {

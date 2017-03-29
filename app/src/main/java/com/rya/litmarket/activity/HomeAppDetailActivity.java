@@ -13,6 +13,7 @@ import com.rya.litmarket.ui.holder.AppDetailDesHolder;
 import com.rya.litmarket.ui.holder.AppDetailInfoHolder;
 import com.rya.litmarket.ui.holder.AppDetailPicsHolder;
 import com.rya.litmarket.ui.holder.AppDetailSafeHolder;
+import com.rya.litmarket.ui.holder.DownloadHolder;
 import com.rya.litmarket.ui.view.LoadingPager;
 import com.rya.litmarket.utils.UiUtil;
 
@@ -85,6 +86,12 @@ public class HomeAppDetailActivity extends BaseActivity {
         desHolder.setData(mAppDetailBean);
         View desView = desHolder.getRootView();
         flDesInfo.addView(desView);
+
+        FrameLayout flDownloadInfo = (FrameLayout) mRootView.findViewById(R.id.fl_app_download);
+        DownloadHolder downloadHolder = new DownloadHolder();
+        downloadHolder.setData(mAppDetailBean);
+        View downloadView = downloadHolder.getRootView();
+        flDownloadInfo.addView(downloadView);
 
         return mRootView;
     }
