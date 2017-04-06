@@ -83,6 +83,15 @@ public class DownloadHolder extends BaseHolder<AppDetailBean> implements View.On
         refreshUI(mCurrentState, mprogress);
     }
 
+    /*
+    * 注销观察者
+    * */
+    public void unRegisterHolder() {
+        if (mDownloadManager != null) {
+            mDownloadManager.unRegisterObserver(this);
+        }
+    }
+
     private void refreshUI(int CurrentState, float progress) {
         mCurrentState = CurrentState;
         mprogress = progress;
@@ -112,11 +121,13 @@ public class DownloadHolder extends BaseHolder<AppDetailBean> implements View.On
                 btnDownload.setVisibility(View.VISIBLE);
                 flDownload.setVisibility(View.GONE);
                 btnDownload.setText("安装");
+
                 break;
             case DownloadBean.STATE_ERROR:
                 btnDownload.setVisibility(View.VISIBLE);
                 flDownload.setVisibility(View.GONE);
                 btnDownload.setText("下载失败");
+
                 break;
             default:
                 break;

@@ -29,6 +29,7 @@ public class HomeAppDetailActivity extends BaseActivity {
     public static String PACKAGE_NAME = "packageName";
     private AppDetailBean mAppDetailBean;
     private View mRootView;
+    private DownloadHolder mDownloadHolder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +48,16 @@ public class HomeAppDetailActivity extends BaseActivity {
         };
         setContentView(basePager);
         basePager.loadData();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // 注销Holder监听
+        if (mDownloadHolder != null) {
+            mDownloadHolder.unRegisterHolder();
+        }
+
     }
 
     private LoadingPager.ResultState onLoad() {
@@ -88,9 +99,9 @@ public class HomeAppDetailActivity extends BaseActivity {
         flDesInfo.addView(desView);
 
         FrameLayout flDownloadInfo = (FrameLayout) mRootView.findViewById(R.id.fl_app_download);
-        DownloadHolder downloadHolder = new DownloadHolder();
-        downloadHolder.setData(mAppDetailBean);
-        View downloadView = downloadHolder.getRootView();
+        mDownloadHolder = new DownloadHolder();
+        mDownloadHolder.setData(mAppDetailBean);
+        View downloadView = mDownloadHolder.getRootView();
         flDownloadInfo.addView(downloadView);
 
         return mRootView;

@@ -49,9 +49,9 @@ public class ImgViewLayout extends FrameLayout {
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
-        int heigthMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 
-        if (widthMode == MeasureSpec.EXACTLY && heigthMode != MeasureSpec.EXACTLY && mRatio > 0) {
+        if (widthMode == MeasureSpec.EXACTLY && heightMode != MeasureSpec.EXACTLY && mRatio > 0) {
             int imageWidth = width - getPaddingLeft() - getPaddingRight();
 
             int imageHeight = (int) (imageWidth / mRatio + 0.5f);

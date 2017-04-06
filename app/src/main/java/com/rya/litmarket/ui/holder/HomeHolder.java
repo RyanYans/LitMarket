@@ -96,6 +96,16 @@ public class HomeHolder extends BaseHolder<HomeBean.ListBean> implements View.On
         refreshUI(mCurrentState, mProgress, mAppInfo.getId());
     }
 
+    /*
+    * 注销观察者
+    * */
+    public void unRegisterHolder() {
+        if (mDownloadManager != null) {
+            mDownloadManager.unRegisterObserver(this);
+        }
+    }
+
+
     private void refreshUI(int CurrentState, float progress, int id) {
         // 判断id是否与该条目匹配，防止listView重用导致item复用显示错误
         if (id != mAppInfo.getId()) {
@@ -120,7 +130,7 @@ public class HomeHolder extends BaseHolder<HomeBean.ListBean> implements View.On
                 progressArc.setBackgroundResource(R.drawable.ic_pause);
                 progressArc.setStyle(ProgressArc.PROGRESS_STYLE_DOWNLOADING);
                 progressArc.setProgress(progress, true);
-                tvDownload.setText((int)(progress*100) + "%");
+                tvDownload.setText((int) (progress * 100) + "%");
                 break;
             case DownloadBean.STATE_PAUSE:
                 progressArc.setBackgroundResource(R.drawable.ic_resume);
