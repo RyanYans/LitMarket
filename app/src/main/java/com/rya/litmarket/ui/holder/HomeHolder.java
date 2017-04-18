@@ -1,5 +1,6 @@
 package com.rya.litmarket.ui.holder;
 
+import android.os.Looper;
 import android.text.format.Formatter;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -155,6 +156,13 @@ public class HomeHolder extends BaseHolder<HomeBean.ListBean> implements View.On
         if (info == null) {
             return;
         }
+
+        if (Looper.myLooper() == Looper.getMainLooper()) {
+            // 当前线程为主线程
+            refreshUI(info.getCurrentState(), info.getProgress(), info.getId());
+        }
+
+        //当前线程为子线程
         UiUtil.runOnUIThread(new Runnable() {
             @Override
             public void run() {

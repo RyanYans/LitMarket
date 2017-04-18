@@ -1,6 +1,7 @@
 package com.rya.litmarket.ui.holder;
 
 import android.graphics.Color;
+import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -138,6 +139,13 @@ public class DownloadHolder extends BaseHolder<AppDetailBean> implements View.On
         if (info == null) {
             return;
         }
+
+        if (Looper.myLooper() == Looper.getMainLooper()){
+            // 当前在主线程中
+            refreshUI(info.getCurrentState(), info.getProgress());
+        }
+
+        //否则在子线程中
         UiUtil.runOnUIThread(new Runnable() {
             @Override
             public void run() {
