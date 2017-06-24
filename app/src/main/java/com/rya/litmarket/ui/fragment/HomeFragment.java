@@ -9,6 +9,7 @@ import com.rya.litmarket.activity.HomeAppDetailActivity;
 import com.rya.litmarket.adapter.HomeAdapter;
 import com.rya.litmarket.bean.HomeBean;
 import com.rya.litmarket.http.protocol.HomeProtocol;
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.ui.holder.HomeHeaderHolder;
 import com.rya.litmarket.utils.UiUtil;
 import com.rya.litmarket.ui.view.LoadingPager;

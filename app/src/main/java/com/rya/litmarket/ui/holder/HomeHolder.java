@@ -14,6 +14,7 @@ import com.rya.litmarket.bean.DownloadBean;
 import com.rya.litmarket.bean.HomeBean;
 import com.rya.litmarket.http.HttpUtil;
 import com.rya.litmarket.manager.DownloadManager;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.ui.view.ProgressArc;
 import com.rya.litmarket.utils.UiUtil;
 
@@ -157,8 +158,8 @@ public class HomeHolder extends BaseHolder<HomeBean.ListBean> implements View.On
             return;
         }
 
-        if (Looper.myLooper() == Looper.getMainLooper()) {
-            // 当前线程为主线程
+        if (Looper.myLooper() == Looper.getMainLooper()) {      // 方法二：Thread.currentThread() == Looper.getMainLooper().getThread()
+            // 当前线程为主线程                             //方法三：Thread.currentThread().getId() == Looper.getMainLooper().getThread().getId()
             refreshUI(info.getCurrentState(), info.getProgress(), info.getId());
         }
 

@@ -1,5 +1,7 @@
 package com.rya.litmarket.ui.fragment;
 
+import com.rya.litmarket.ui.base.BaseFragment;
+
 import java.util.HashMap;
 
 /**

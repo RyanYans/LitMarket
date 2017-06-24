@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide;
 import com.rya.litmarket.R;
 import com.rya.litmarket.bean.SubjectBean;
 import com.rya.litmarket.http.HttpUtil;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.utils.UiUtil;
 
 import butterknife.BindView;

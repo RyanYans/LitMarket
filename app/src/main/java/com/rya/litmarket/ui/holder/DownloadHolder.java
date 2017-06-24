@@ -3,7 +3,6 @@ package com.rya.litmarket.ui.holder;
 import android.graphics.Color;
 import android.os.Looper;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
@@ -11,6 +10,7 @@ import com.rya.litmarket.R;
 import com.rya.litmarket.bean.AppDetailBean;
 import com.rya.litmarket.bean.DownloadBean;
 import com.rya.litmarket.manager.DownloadManager;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.ui.view.ProgressHorizontal;
 import com.rya.litmarket.utils.UiUtil;
 

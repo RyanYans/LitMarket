@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.rya.litmarket.adapter.RecommAdapter;
 import com.rya.litmarket.http.protocol.RecommProtocol;
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.ui.view.LoadingPager;
 import com.rya.litmarket.ui.view.fly.ShakeListener;
 import com.rya.litmarket.ui.view.fly.StellarMap;

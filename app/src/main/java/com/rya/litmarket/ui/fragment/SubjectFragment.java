@@ -1,19 +1,16 @@
 package com.rya.litmarket.ui.fragment;
 
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.rya.litmarket.adapter.SubjectAdapter;
-import com.rya.litmarket.bean.AppBean;
 import com.rya.litmarket.bean.SubjectBean;
 import com.rya.litmarket.http.protocol.SubjectProtocol;
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.ui.view.LoadingPager;
 import com.rya.litmarket.utils.UiUtil;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Rya32 on 广东石油化工学院.

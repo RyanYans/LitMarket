@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.rya.litmarket.R;
 import com.rya.litmarket.global.ConstantsValues;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.utils.UiUtil;
 
 import java.util.ArrayList;

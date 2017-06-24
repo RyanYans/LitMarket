@@ -6,8 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.rya.litmarket.manager.ThreadManager;
-import com.rya.litmarket.ui.holder.BaseHolder;
-import com.rya.litmarket.ui.holder.HomeHolder;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.ui.holder.MoreHolder;
 import com.rya.litmarket.utils.UiUtil;
 

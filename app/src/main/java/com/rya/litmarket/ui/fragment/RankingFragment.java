@@ -2,9 +2,7 @@ package com.rya.litmarket.ui.fragment;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.PaintDrawable;
 import android.graphics.drawable.StateListDrawable;
-import android.support.v4.text.TextUtilsCompat;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -12,8 +10,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rya.litmarket.R;
 import com.rya.litmarket.http.protocol.RankingProtocol;
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.ui.view.FlowLayout;
 import com.rya.litmarket.ui.view.LoadingPager;
 import com.rya.litmarket.utils.DrawableUtil;

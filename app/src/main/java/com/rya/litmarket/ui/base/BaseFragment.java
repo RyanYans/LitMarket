@@ -1,4 +1,4 @@
-package com.rya.litmarket.ui.fragment;
+package com.rya.litmarket.ui.base;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

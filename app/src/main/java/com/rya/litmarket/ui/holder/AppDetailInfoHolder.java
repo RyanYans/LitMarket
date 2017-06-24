@@ -1,7 +1,5 @@
 package com.rya.litmarket.ui.holder;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
 import android.text.format.Formatter;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +10,7 @@ import com.bumptech.glide.Glide;
 import com.rya.litmarket.R;
 import com.rya.litmarket.bean.AppDetailBean;
 import com.rya.litmarket.http.HttpUtil;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.utils.UiUtil;
 
 import butterknife.BindView;

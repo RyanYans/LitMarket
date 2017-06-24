@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.rya.litmarket.R;
 import com.rya.litmarket.ui.fragment.MainContentFragment;
@@ -30,7 +31,10 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.nav_view)
     NavigationView navView;
     @BindView(R.id.main_drawer_layout)
-    DrawerLayout mainDrawerLayout;
+    DrawerLayout mMainDrawerLayout;
+
+    private long mTimeBack = 0;
+    private boolean isDrawerOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +103,8 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                mainDrawerLayout.openDrawer(Gravity.START);
+                mMainDrawerLayout.openDrawer(Gravity.START);
+
                 break;
             case R.id.toolbar_setting:
 
@@ -107,5 +112,24 @@ public class MainActivity extends BaseActivity {
         return true;
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (mMainDrawerLayout.isDrawerOpen(Gravity.START)) {
+                mMainDrawerLayout.closeDrawer(Gravity.START);
+            } else {
+                if ((System.currentTimeMillis() - mTimeBack) > 2000) {
+                    Toast.makeText(this, "再按一次退出应用！", Toast.LENGTH_SHORT).show();
+                    mTimeBack = System.currentTimeMillis();
+                } else {
+                    //GlobalApplication.getInstance().exit();
 
+                    finish();
+                }
+            }
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
 }

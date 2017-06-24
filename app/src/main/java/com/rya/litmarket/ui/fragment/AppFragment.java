@@ -2,11 +2,11 @@ package com.rya.litmarket.ui.fragment;
 
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.rya.litmarket.adapter.AppAdapter;
 import com.rya.litmarket.bean.AppBean;
 import com.rya.litmarket.http.protocol.AppProtocol;
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.ui.view.LoadingPager;
 import com.rya.litmarket.utils.UiUtil;
 

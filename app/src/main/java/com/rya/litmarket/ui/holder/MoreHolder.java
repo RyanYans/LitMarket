@@ -5,6 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rya.litmarket.R;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.utils.UiUtil;
 
 /**

@@ -1,12 +1,10 @@
 package com.rya.litmarket.ui.fragment;
 
-import android.graphics.Color;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 
 import com.rya.litmarket.adapter.RecommAdapter;
 import com.rya.litmarket.http.protocol.RecommProtocol;
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.ui.view.fly.ShakeListener;
 import com.rya.litmarket.ui.view.fly.StellarMap;
 import com.rya.litmarket.utils.UiUtil;

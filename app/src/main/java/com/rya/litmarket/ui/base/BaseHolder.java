@@ -1,4 +1,4 @@
-package com.rya.litmarket.ui.holder;
+package com.rya.litmarket.ui.base;
 
 import android.view.View;
 

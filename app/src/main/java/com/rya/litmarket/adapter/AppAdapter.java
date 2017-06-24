@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import com.rya.litmarket.bean.AppBean;
 import com.rya.litmarket.http.protocol.AppProtocol;
 import com.rya.litmarket.ui.holder.AppHolder;
-import com.rya.litmarket.ui.holder.BaseHolder;
+import com.rya.litmarket.ui.base.BaseHolder;
 
 import java.util.ArrayList;
 import java.util.List;

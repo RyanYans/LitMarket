@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.rya.litmarket.R;
 import com.rya.litmarket.bean.AppDetailBean;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.utils.LogUtils;
 import com.rya.litmarket.utils.UiUtil;
 

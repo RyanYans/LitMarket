@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rya.litmarket.R;
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.utils.UiUtil;
 import com.shizhefei.view.indicator.Indicator;
 import com.shizhefei.view.indicator.IndicatorViewPager;

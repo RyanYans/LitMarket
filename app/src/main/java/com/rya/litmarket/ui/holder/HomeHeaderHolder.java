@@ -1,6 +1,5 @@
 package com.rya.litmarket.ui.holder;
 
-import android.sax.RootElement;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -8,13 +7,12 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.rya.litmarket.R;
 import com.rya.litmarket.http.HttpUtil;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.utils.UiUtil;
 
 import java.util.List;

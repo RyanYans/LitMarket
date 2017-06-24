@@ -1,6 +1,8 @@
 package com.rya.litmarket.ui.fragment;
 
 import android.view.View;
+
+import com.rya.litmarket.ui.base.BaseFragment;
 import com.rya.litmarket.ui.view.LoadingPager;
 
 /**

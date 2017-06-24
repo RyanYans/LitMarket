@@ -2,7 +2,7 @@ package com.rya.litmarket.adapter;
 
 import com.rya.litmarket.bean.SubjectBean;
 import com.rya.litmarket.http.protocol.SubjectProtocol;
-import com.rya.litmarket.ui.holder.BaseHolder;
+import com.rya.litmarket.ui.base.BaseHolder;
 import com.rya.litmarket.ui.holder.SubjectHolder;
 
 import java.util.ArrayList;
